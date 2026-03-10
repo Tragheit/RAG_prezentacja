@@ -1,6 +1,4 @@
-To fantastyczny temat dla studentów uczenia maszynowego! Zwykły podział tekstu i wrzucenie go do domyślnego modelu z OpenAI to zaledwie wierzchołek góry lodowej. Dla inżynierów ML prawdziwa optymalizacja zaczyna się właśnie na etapie wyboru i treningu reprezentacji wektorowej.
-
-Oto zestawienie najważniejszych i najbardziej zaawansowanych strategii wektoryzacji (embeddingu), które warto omówić (lub dodać do materiałów) jako "Advanced RAG":
+# Strategie wektoryzacji (embedding)
 
 ### 1. Standardowe wektory gęste (Dense Embeddings)
 
