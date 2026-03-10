@@ -1,0 +1,9 @@
+chromadb
+openai
+numpy
+tqdm
+scikit-learn
+plotly
+pyarrow
+langsmith
+python-dotenv

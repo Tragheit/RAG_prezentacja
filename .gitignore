@@ -1,0 +1,84 @@
+# =========================
+# PyCharm / JetBrains IDE
+# =========================
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+cmake-build-*/
+
+# =========================
+# Python / Byte-compiled
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# =========================
+# C/C++ extensions
+# =========================
+*.so
+
+# =========================
+# Wirtualne środowiska (Virtual Environments)
+# =========================
+venv/
+.venv/
+env/
+.env/
+ENV/
+env.bak/
+venv.bak/
+
+# =========================
+# Zmienne środowiskowe i klucze (BARDZO WAŻNE)
+# =========================
+.env
+.env.local
+.env.*.local
+
+# =========================
+# Jupyter Notebooks
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# Dystrybucje / Pakiety
+# =========================
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# =========================
+# Narzędzia testowe i Coverage
+# =========================
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+.tox/
+
+# =========================
+# OS / Systemowe
+# =========================
+.DS_Store
+Thumbs.db
