@@ -1,12 +1,6 @@
-To doskonały krok naprzód. Skoro Wasi studenci rozumieją już, jak mierzyć Retrievera (Recall@K, MRR), musimy przejść do najtrudniejszej części: **jak mierzyć Generator (LLM)?**
+Nowoczesna ewaluacja RAG dzieli się na dwie główne gałęzie: metryki niewymagające wzorca (tzw. Reference-Free, bazujące na LLM-as-a-Judge) oraz metryki oparte na wzorcu (Reference-Based).
 
-Ewaluacja otwartego tekstu to zmora inżynierów ML. Nie możemy tu użyć prostego *Accuracy* czy *F1-score*, bo model za każdym razem może wygenerować poprawną odpowiedź używając zupełnie innych słów.
-
-Dlatego nowoczesna ewaluacja RAG dzieli się na dwie główne gałęzie: metryki niewymagające wzorca (tzw. Reference-Free, bazujące na LLM-as-a-Judge) oraz metryki oparte na wzorcu (Reference-Based).
-
-Oto szczegółowy opis najważniejszych metryk, które powinny znaleźć się w Waszej prezentacji.
-
-### 1. Metryki paradygmatu LLM-as-a-Judge (Reference-Free)
+## 1. Metryki paradygmatu LLM-as-a-Judge (Reference-Free)
 
 *Te metryki nie wymagają "Ground Truth" (idealnej odpowiedzi od człowieka). Wystarczy zapytanie, odzyskany kontekst i wygenerowana odpowiedź. Sędzią jest zazwyczaj silniejszy model, np. GPT-4.*
 
@@ -34,7 +28,7 @@ $$Faithfulness = \frac{|Claims_{supported}|}{|Claims_{total}|}$$
 
 ---
 
-### 2. Metryki oparte na Ground Truth (Reference-Based)
+## 2. Metryki oparte na Ground Truth (Reference-Based)
 
 *Te metryki wymagają stworzenia zestawu testowego (Golden Dataset), w którym człowiek (Ekspert Domenowy) napisał idealną odpowiedź na dane pytanie.*
 
@@ -58,19 +52,10 @@ $$Faithfulness = \frac{|Claims_{supported}|}{|Claims_{total}|}$$
 
 ---
 
-### 3. Klasyczne Metryki NLP (Anty-wzorce w RAG)
+## 3. Klasyczne Metryki NLP (Anty-wzorce w RAG)
 
 *Warto o nich wspomnieć jako przestrogę dla studentów. Bądźmy szczerzy – używanie ich do ewaluacji nowoczesnych LLM-ów to inżynieryjny błąd.*
 
 * **ROUGE (Recall-Oriented Understudy for Gisting Evaluation) / BLEU (Bilingual Evaluation Understudy)**
 * **Co to jest:** Stare metryki używane do tłumaczeń maszynowych i podsumowań. Mierzą dokładne pokrycie N-gramów (np. identycznych sekwencji 2 lub 3 słów) między wygenerowanym tekstem a wzorcem.
 * **Dlaczego są złe dla RAG:** Są całkowicie "ślepe" na znaczenie. LLM z definicji jest potężnym silnikiem parafrazującym. Jeśli model udzieli perfekcyjnej, logicznej odpowiedzi, ale ułoży zdanie inaczej niż człowiek we wzorcu, ROUGE i BLEU dadzą mu tragicznie niski wynik.
-
-
-
----
-
-**Podsumowanie dla studentów:**
-W praktyce komercyjnej złoty standard to aktualnie wygenerowanie testowego datasetu (np. 100 pytań) i użycie frameworka **Ragas** lub **TruLens**, aby zautomatyzować mierzenie *Faithfulness* i *Answer Relevance* przy użyciu modelu GPT-4 jako sędziego.
-
-Czy chciałbyś, abym przygotował krótki snippet w Pythonie pokazujący, jak łatwo zaimplementować ewaluację z użyciem biblioteki `ragas`, aby studenci mogli sami wyliczyć np. `faithfulness` w swoim notatniku?
